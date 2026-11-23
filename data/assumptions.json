@@ -1,0 +1,17 @@
+{
+  "inhalationMultipliers": {
+    "rest": { "value": 1.0, "low": 1.0, "high": 1.0, "unit": "ratio to sedentary", "source": "US EPA Exposure Factors Handbook 2011, Ch. 6, Table 6-2 (sedentary/passive = baseline)" },
+    "walk": { "value": 2.9, "low": 2.3, "high": 2.9, "unit": "ratio to sedentary", "source": "US EPA EFH 2011 Ch. 6 Table 6-2, light intensity (children 6-<11: 2.3x; adults 21-<31: 2.9x)" },
+    "errands": { "value": 2.9, "low": 2.3, "high": 2.9, "unit": "ratio to sedentary", "source": "US EPA EFH 2011 Ch. 6 Table 6-2, light intensity (assumed for errands)" },
+    "commute": { "value": 1.0, "low": 1.0, "high": 2.9, "unit": "ratio to sedentary", "source": "US EPA EFH 2011 Ch. 6 Table 6-2; seated travel assumed sedentary-to-light" },
+    "play": { "value": 4.6, "low": 4.6, "high": 6.2, "unit": "ratio to sedentary", "source": "US EPA EFH 2011 Ch. 6 Table 6-2, moderate intensity (children 4.6x; adults 6.2x)" },
+    "cycle": { "value": 6.2, "low": 4.6, "high": 6.2, "unit": "ratio to sedentary", "source": "US EPA EFH 2011 Ch. 6 Table 6-2, moderate intensity; consistent with de Nazelle et al. 2012, Atmospheric Environment 59:151-159 (active commuters inhale 2-3x more volume than car commuters)" },
+    "exercise": { "value": 6.2, "low": 6.2, "high": 11.9, "unit": "ratio to sedentary", "source": "US EPA EFH 2011 Ch. 6 Table 6-2, moderate to high intensity (adults 21-<31)" }
+  },
+  "microenvironments": {
+    "outdoor": { "value": 1.0, "low": 1.0, "high": 1.0, "unit": "ratio to outdoor", "source": "Baseline: outdoor forecast concentration" },
+    "indoor-windows-closed": { "value": 0.63, "low": 0.5, "high": 0.8, "unit": "ratio to outdoor", "source": "Cyrys et al. 2004, J Expo Anal Environ Epidemiol 14(4) - PM2.5 I/O 0.63 with closed windows (Erfurt). Range is our assumption." },
+    "indoor-windows-open": { "value": 0.85, "low": 0.7, "high": 1.0, "unit": "ratio to outdoor", "source": "Assumption. Chen & Zhao 2011, Atmospheric Environment 45(2):275-288 reviews I/O ratios and finds wide variation." },
+    "in-vehicle": { "value": 0.7, "low": 0.5, "high": 1.0, "unit": "ratio to outdoor", "source": "NEEDS_SOURCE - assumption; in-cabin levels vary with windows, ventilation and vehicle" }
+  }
+}
