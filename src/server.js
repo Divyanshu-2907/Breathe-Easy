@@ -5,6 +5,7 @@ import { securityMiddleware } from './middleware/security.js';
 import { rateLimiter } from './middleware/rateLimit.js';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
 import healthRouter from './routes/health.js';
+import planRouter from './routes/plan.js';
 
 const app = express();
 
@@ -17,8 +18,9 @@ app.use(rateLimiter);
 // Parse JSON with 20kb limit
 app.use(express.json({ limit: '20kb' }));
 
-// Health check endpoint
+// Endpoints
 app.use('/api/health', healthRouter);
+app.use('/api/plan', planRouter);
 
 // 404 handler for unmatched routes
 app.use(notFoundHandler);

@@ -71,8 +71,10 @@ describe('Rules: swaps.js', () => {
       expect(typeof swap.breatheLess).toBe('boolean');
       expect(typeof swap.emitLess).toBe('boolean');
       expect(['low', 'medium', 'high']).toContain(swap.impactLevel);
-      expect(swap).toHaveProperty('impactRange');
       expect(swap).toHaveProperty('why');
+      expect(swap).toHaveProperty('source');
+      // When impactRange is null in data, it must be omitted from response
+      expect(swap.impactRange).toBeUndefined();
     }
   });
 });

@@ -51,15 +51,21 @@ export function selectSwaps(household = {}, band = 'Moderate', members = []) {
   });
 
   return selected.map(
-    ({ id, title, breatheLess, emitLess, impactLevel, impactRange, why }) => ({
-      id,
-      title,
-      breatheLess,
-      emitLess,
-      impactLevel,
-      impactRange: impactRange || 'Moderate reduction',
-      why,
-    })
+    ({ id, title, breatheLess, emitLess, impactLevel, impactRange, why, source }) => {
+      const item = {
+        id,
+        title,
+        breatheLess,
+        emitLess,
+        impactLevel,
+        why,
+        source: source || 'NEEDS_SOURCE',
+      };
+      if (impactRange !== null && impactRange !== undefined) {
+        item.impactRange = impactRange;
+      }
+      return item;
+    }
   );
 }
 
